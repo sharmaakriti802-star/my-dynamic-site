@@ -2,237 +2,195 @@ import ContactForm from "./ContactForm";
 
 function App() {
   return (
-    <div style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
-      {/* Top navigation */}
-      <header
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 10,
-          background: "#ffffffcc",
-          backdropFilter: "blur(10px)",
-          borderBottom: "1px solid #eee",
-          padding: "0.75rem 2rem",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between"
-        }}
-      >
-        <div style={{ fontWeight: 700 }}>Whizzystack</div>
-        <nav style={{ fontSize: "0.9rem" }}>
-          <a href="#services" style={{ marginRight: "1rem" }}>
-            Services
-          </a>
-          <a href="#why" style={{ marginRight: "1rem" }}>
-            Why us
-          </a>
-          <a href="#contact">Contact</a>
-        </nav>
+    <div className="ws-page">
+      {/* HEADER */}
+      <header className="ws-header">
+        <div className="ws-shell ws-header-inner">
+          <div className="ws-logo">
+            <span className="ws-logo-pill" />
+            <span>Whizzystack</span>
+          </div>
+          <nav className="ws-nav">
+            <a href="#services">Services</a>
+            <a href="#why">Why us</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
       </header>
 
-      {/* Hero section */}
-      <section
-        id="top"
-        style={{
-          padding: "4rem 2rem 3rem",
-          maxWidth: 1080,
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "minmax(0, 3fr) minmax(0, 2fr)",
-          gap: "2.5rem"
-        }}
-      >
-        <div>
-          <h1
-            style={{
-              fontSize: "2.4rem",
-              lineHeight: 1.15,
-              marginBottom: "1rem"
-            }}
-          >
-            React, AI & automation that
-            <br />
-            actually ships.
-          </h1>
-          <p style={{ fontSize: "1.05rem", marginBottom: "1.5rem" }}>
-            We help teams turn ideas into working products – fast. React
-            frontends, AI agents, and workflow automation built on top of your
-            existing tools.
-          </p>
-          <ul
-            style={{
-              listStyle: "none",
-              padding: 0,
-              marginBottom: "1.5rem",
-              color: "#444"
-            }}
-          >
-            <li>• React/Next.js web apps & dashboards</li>
-            <li>• AI chatbots & assistants (web + WhatsApp)</li>
-            <li>• Integrations & automation around CRMs, ERPs, and APIs</li>
-          </ul>
-          <a
-            href="#contact"
-            style={{
-              display: "inline-block",
-              padding: "0.75rem 1.4rem",
-              background: "#111827",
-              color: "#fff",
-              borderRadius: 999,
-              textDecoration: "none",
-              fontSize: "0.95rem"
-            }}
-          >
-            Tell us what you want to build →
-          </a>
-        </div>
+      {/* HERO */}
+      <section id="top" className="ws-section">
+        <div className="ws-shell ws-hero-grid">
+          <div>
+            <div className="ws-badge">
+              <span className="ws-badge-dot" />
+              React • AI • Automation
+            </div>
 
-        <div
-          style={{
-            border: "1px solid #eee",
-            borderRadius: 12,
-            padding: "1.5rem",
-            background: "#fafafa"
-          }}
-        >
-          <h3 style={{ marginBottom: "0.75rem" }}>Typical outcomes</h3>
-          <ul
+            <h1 className="ws-hero-title">
+              Ship real products,
+              <br />
+              not just prototypes.
+            </h1>
+
+            <p className="ws-hero-sub">
+              We help companies turn ideas into production-grade React apps,
+              AI agents and automated workflows – with clear, measurable
+              outcomes.
+            </p>
+
+            <ul className="ws-hero-bullets">
+              <li>• React/Next.js frontends for SaaS, dashboards and portals</li>
+              <li>• AI chatbots & assistants using your own data and tools</li>
+              <li>• Integrations around CRMs, ERPs and internal APIs</li>
+            </ul>
+
+            <div>
+              <a href="#contact" className="ws-cta-primary">
+                Tell us what you want to build →
+              </a>
+              <a href="#services" className="ws-cta-secondary">
+                Or review what we can deliver
+              </a>
+            </div>
+          </div>
+
+          {/* Hero side card with SVG */}
+          <div className="ws-hero-card">
+            <svg
+              className="ws-hero-svg"
+              viewBox="0 0 400 400"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient id="ws-grad" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stopColor="#38bdf8" />
+                  <stop offset="50%" stopColor="#a855f7" />
+                  <stop offset="100%" stopColor="#22c55e" />
+                </linearGradient>
+              </defs>
+              <circle cx="200" cy="200" r="180" fill="url(#ws-grad)" />
+            </svg>
+            <h3 style={{ marginBottom: "0.4rem" }}>Snapshot: typical outcome</h3>
+            <p
+              style={{
+                margin: 0,
+                fontSize: "0.9rem",
+                color: "#e5e7eb",
+                maxWidth: "16rem"
+              }}
+            >
+              Cut manual ops by 30–40%, respond to leads in seconds instead of
+              hours, and get real visibility with simple dashboards.
+            </p>
+            <div style={{ marginTop: "1.2rem", fontSize: "0.85rem" }}>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <span>Time-to-first-version</span>
+                <span style={{ color: "#bbf7d0" }}>2–4 weeks</span>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <span>Stack</span>
+                <span>React, Node, Firebase, APIs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="ws-section">
+        <div className="ws-shell">
+          <h2 style={{ fontSize: "1.6rem", marginBottom: "1.2rem" }}>
+            What we can build for you
+          </h2>
+          <p
             style={{
-              paddingLeft: "1.1rem",
-              margin: 0,
+              maxWidth: "40rem",
               fontSize: "0.95rem",
-              lineHeight: 1.6
+              color: "#cbd5f5",
+              marginBottom: "1.8rem"
             }}
           >
-            <li>Reduce manual ops work with smart automation</li>
-            <li>Give customers instant responses via AI agents</li>
-            <li>Launch new internal tools without heavy IT cycles</li>
-          </ul>
-        </div>
-      </section>
+            We keep the service surface tight: React engineering plus AI and
+            automation stacked on top of your existing tools, not random tech
+            experiments.
+          </p>
 
-      {/* Services section */}
-      <section
-        id="services"
-        style={{
-          padding: "2rem 2rem 3rem",
-          maxWidth: 1080,
-          margin: "0 auto"
-        }}
-      >
-        <h2 style={{ fontSize: "1.6rem", marginBottom: "1.5rem" }}>
-          What we can build for you
-        </h2>
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: "1.25rem"
-          }}
-        >
-          <div
-            style={{
-              border: "1px solid #eee",
-              borderRadius: 10,
-              padding: "1.2rem"
-            }}
-          >
-            <h3>React product frontends</h3>
-            <p style={{ fontSize: "0.95rem" }}>
-              Marketing sites, dashboards, CRMs and portals built with modern
-              React tooling.
-            </p>
-          </div>
-
-          <div
-            style={{
-              border: "1px solid #eee",
-              borderRadius: 10,
-              padding: "1.2rem"
-            }}
-          >
-            <h3>AI agents & chatbots</h3>
-            <p style={{ fontSize: "0.95rem" }}>
-              Custom AI flows on your data: support, lead qualification,
-              internal copilots, and more.
-            </p>
-          </div>
-
-          <div
-            style={{
-              border: "1px solid #eee",
-              borderRadius: 10,
-              padding: "1.2rem"
-            }}
-          >
-            <h3>Automation & integrations</h3>
-            <p style={{ fontSize: "0.95rem" }}>
-              Glue between tools – WhatsApp, email, CRMs, payment gateways,
-              internal APIs.
-            </p>
+          <div className="ws-cards-grid">
+            <div className="ws-card">
+              <h3>React product frontends</h3>
+              <p>
+                Marketing sites, SaaS dashboards, admin panels and internal
+                tools built with modern React/Next.js.
+              </p>
+            </div>
+            <div className="ws-card">
+              <h3>AI agents & chatbots</h3>
+              <p>
+                Support agents, sales assistants and internal copilots that sit
+                on top of your data and workflows.
+              </p>
+            </div>
+            <div className="ws-card">
+              <h3>Automation & integrations</h3>
+              <p>
+                Glue between your stack: CRMs, WhatsApp, email, payments,
+                custom APIs, webhooks and background jobs.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Why us */}
-      <section
-        id="why"
-        style={{
-          padding: "2rem 2rem 3rem",
-          maxWidth: 1080,
-          margin: "0 auto",
-          borderTop: "1px solid #f0f0f0"
-        }}
-      >
-        <h2 style={{ fontSize: "1.6rem", marginBottom: "1rem" }}>
-          Why teams work with Whizzystack
-        </h2>
-        <ul
-          style={{
-            paddingLeft: "1.1rem",
-            lineHeight: 1.7,
-            maxWidth: 720,
-            fontSize: "0.95rem"
-          }}
-        >
-          <li>We’re engineers first – not just slide decks.</li>
-          <li>Small, focused team that ships fast with you in the loop.</li>
-          <li>Comfortable with both greenfield builds and messy legacy stacks.</li>
-        </ul>
-      </section>ßßß
+      {/* WHY US + CONTACT SIDE BY SIDE */}
+      <section id="why" className="ws-section">
+        <div className="ws-shell ws-two-col">
+          <div>
+            <h2 style={{ fontSize: "1.6rem", marginBottom: "1rem" }}>
+              Why teams like working with us
+            </h2>
+            <ul
+              style={{
+                paddingLeft: "1.1rem",
+                lineHeight: 1.8,
+                fontSize: "0.95rem",
+                color: "#cbd5f5",
+                maxWidth: "30rem"
+              }}
+            >
+              <li>We’re engineers first – we actually ship, not just plan.</li>
+              <li>
+                Small, senior team: you talk to the people who build, not
+                account layers.
+              </li>
+              <li>
+                Comfortable building new products or wrapping structure around
+                messy legacy systems.
+              </li>
+              <li>
+                Focused on working software, clear outcomes and sensible
+                timelines.
+              </li>
+            </ul>
+          </div>
 
-      {/* Contact / lead form */}
-      <section
-        id="contact"
-        style={{
-          padding: "2rem 2rem 3rem",
-          maxWidth: 800,
-          margin: "0 auto",
-          borderTop: "1px solid #f0f0f0"
-        }}
-      >
-        <h2 style={{ fontSize: "1.6rem", marginBottom: "0.5rem" }}>
-          Tell us what you want to build
-        </h2>
-        <p style={{ marginBottom: "1.5rem", fontSize: "0.95rem" }}>
-          A few lines about your product, current stack and timeline are enough.
-          We’ll get back with a clear next step.
-        </p>
-
-        <ContactForm />
+          {/* Contact section embedded here */}
+          <div id="contact">
+            <h2 style={{ fontSize: "1.4rem", marginBottom: "0.4rem" }}>
+              Tell us what you want to build
+            </h2>
+            <p className="ws-contact-intro">
+              A few lines about your product, current stack and rough timeline
+              are enough. We’ll come back with a concrete angle, not just a
+              discovery call.
+            </p>
+            <ContactForm />
+          </div>
+        </div>
       </section>
 
-      {/* Footer */}
-      <footer
-        style={{
-          padding: "1rem 2rem",
-          borderTop: "1px solid #eee",
-          fontSize: "0.8rem",
-          color: "#666",
-          textAlign: "center"
-        }}
-      >
+      {/* FOOTER */}
+      <footer className="ws-footer">
         © {new Date().getFullYear()} Whizzystack. Built with React & Firebase.
       </footer>
     </div>

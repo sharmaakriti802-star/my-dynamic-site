@@ -1,16 +1,17 @@
 export default function ServicesPage() {
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>Our Services</h1>
-      <p>
-        We build custom React, AI agents, chatbots, and automation for web and
-        mobile products.
+    <div style={{ padding: "3rem 2rem" }}>
+      <h1>Services</h1>
+      <p style={{ maxWidth: 640, marginBottom: "2rem" }}>
+        We focus on a tight core: React engineering plus AI + automation
+        stacked on top of your existing tools.
       </p>
 
-      <ul>
-        <li>Custom React / Next.js frontends</li>
-        <li>AI chatbots & support agents</li>
-        <li>WhatsApp / CRM / backend automation</li>
+      <ul style={{ lineHeight: 1.8 }}>
+        <li>React / Next.js frontends for SaaS and internal tools</li>
+        <li>AI chatbots and support agents (web + WhatsApp)</li>
+        <li>Workflow automation (integrations, webhooks, CRMs)</li>
+        <li>Analytics dashboards and lightweight admin panels</li>
       </ul>
     </div>
   );
