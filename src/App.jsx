@@ -1,6 +1,7 @@
 import { Link, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
+import ServicesPage from "./pages/ServicesPage"; // ⬅ new import
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicesPage />} />  {/* ⬅ new route */}
           <Route path="/services" element={<HomePage section="services" />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
